@@ -24,18 +24,13 @@ export default function Home() {
     <main className="flex min-h-screen flex-col px-6 py-10 md:px-12 lg:px-20">
       <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-12">
         <nav className="flex items-center justify-between border-b border-spborder pb-6">
-          <div className="flex items-center gap-3">
-            <Image
-              src="/images/logo.svg"
-              alt="Structured Partners"
-              width={28}
-              height={28}
-              priority
-            />
-            <span className="text-[10px] tracking-[0.22em] uppercase text-sptext">
-              Structured Partners
-            </span>
-          </div>
+          <Image
+            src="/images/logo.svg"
+            alt="Structured Partners"
+            width={36}
+            height={36}
+            priority
+          />
           <div className="hidden gap-6 text-[10px] tracking-[0.2em] uppercase text-spmuted md:flex">
             {navLinks.map(link => (
               <a
@@ -95,21 +90,30 @@ export default function Home() {
           </section>
         </section>
 
-        <footer className="border-t border-spborder pt-6 text-[11px] text-spmuted">
-          <div className="mb-2">
-            <a
-              href="mailto:info@structuredpartners.com"
-              className="transition-colors duration-150 hover:text-espaccent"
-            >
-              info@structuredpartners.com
-            </a>
+        <footer className="border-t border-spborder pt-8 text-[11px] text-spmuted">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-sptext">
+                Structured Partners
+              </p>
+              <p className="text-[12px] text-spmuted">
+                Boutique M&amp;A advisory for industrial &amp; field services businesses.
+              </p>
+            </div>
+            <div className="flex flex-col gap-1 text-[12px]">
+              <a
+                href="mailto:info@structuredpartners.com"
+                className="transition-colors duration-150 hover:text-espaccent"
+              >
+                info@structuredpartners.com
+              </a>
+              <span>St. Petersburg, Florida</span>
+            </div>
           </div>
-          <p className="text-[10px] uppercase tracking-[0.18em]">
-            Structured Partners · Industrial &amp; Field Services M&amp;A
-          </p>
-          <p className="mt-1 text-[11px] text-spmuted">
-            © {new Date().getFullYear()} Structured Partners. All rights reserved.
-          </p>
+          <div className="mt-6 flex flex-col gap-1 text-[10px] uppercase tracking-[0.18em] text-spmuted">
+            <span>Structured Partners · Industrial &amp; Field Services M&amp;A</span>
+            <span>© {new Date().getFullYear()} Structured Partners. All rights reserved.</span>
+          </div>
         </footer>
       </div>
     </main>
