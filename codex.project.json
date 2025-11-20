@@ -1,0 +1,34 @@
+{
+  "name": "structured-partners-landing",
+  "description": "AbstractVC-style, ultra-minimal M&A landing page for Structured Partners (industrial & field services focused), built with Next.js 14 (app router) and Tailwind CSS, ready for Vercel deploy.",
+  "language": "typescript",
+  "framework": "nextjs-14",
+  "style": "tailwind",
+  "entrypoint": "app/page.tsx",
+  "tasks": [
+    {
+      "id": "landing-page",
+      "description": "Implement an Abstract VC-style single-page landing site for Structured Partners with MD-only positioning and industrial & field services focus. No blog, no CMS, no auth. Just a hero and a refined footer.",
+      "files": [
+        "app/layout.tsx",
+        "app/page.tsx",
+        "app/globals.css",
+        "public/images/logo.svg",
+        "next.config.mjs",
+        "tailwind.config.mjs",
+        "postcss.config.mjs",
+        "tsconfig.json",
+        "package.json"
+      ]
+    }
+  ],
+  "requirements": [
+    "Use Next.js 14 app router (app/ directory).",
+    "Use Tailwind CSS for styling; no component libraries, no shadcn for this first pass.",
+    "Implement a single route `/` that renders the Structured Partners landing page.",
+    "Layout and vibe should follow the Abstract VC homepage but adapted to Structured Partners content and brand.",
+    "Typography and spacing should feel high-end: lots of negative space, small caps for labels, no loud buttons.",
+    "Site must be responsive and look excellent on desktop and modern mobile.",
+    "Keep bundle small and avoid unnecessary dependencies."
+  ]
+}
