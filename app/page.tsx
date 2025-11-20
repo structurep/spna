@@ -19,10 +19,10 @@ export default function Home() {
             </span>
           </div>
           <div className="hidden md:flex items-center gap-6 text-[11px] tracking-[0.16em] uppercase text-spmuted">
-            <a href="#about" className="hover:text-sptext transition-colors">
+            <a href="#" className="hover:text-sptext transition-colors">
               About
             </a>
-            <a href="#mandates" className="hover:text-sptext transition-colors">
+            <a href="#" className="hover:text-sptext transition-colors">
               Mandates
             </a>
             <a
@@ -35,7 +35,7 @@ export default function Home() {
         </nav>
 
         {/* HERO */}
-        <section id="about" className="flex-1 flex items-center">
+        <section className="flex flex-col gap-10 md:gap-14 flex-1">
           <div className="max-w-xl">
             <div className="text-[10px] md:text-[11px] tracking-[0.18em] uppercase text-spmuted mb-4">
               Industrial &amp; field services M&amp;A
@@ -46,49 +46,53 @@ export default function Home() {
             </h1>
 
             <p className="text-[14px] leading-7 text-spmuted mb-3 max-w-xl">
-              Structured Partners is a boutique M&amp;A advisory firm focused
-              on industrial and field services businesses. We run a limited
-              number of sale and recapitalization processes each year, and
-              every mandate is led start-to-finish by an experienced
-              Managing Director — not a junior team.
+              Structured Partners is a boutique M&amp;A advisory firm focused on
+              industrial and field services businesses. We run a limited number
+              of sale and recapitalization processes each year, and every
+              mandate is led start-to-finish by an experienced Managing
+              Director — not a junior team.
             </p>
 
             <p className="text-[12px] leading-6 text-spmuted">
-              Based in St. Petersburg, Florida. Working with founders,
-              families, and select investors across the United States.
+              Based in St. Petersburg, Florida. Working with founders, families,
+              and select investors across the United States.
             </p>
           </div>
-        </section>
 
-        {/* Mandates */}
-        <section id="mandates" className="mt-16 md:mt-20">
-          <div className="text-[11px] tracking-[0.18em] uppercase text-spmuted mb-3">
-            Recent Mandates
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 text-[13px] leading-6">
-            <div className="border border-spborder rounded-lg p-4 bg-white/70">
-              <div className="text-xs uppercase tracking-[0.18em] text-spmuted mb-1">
-                Sell-Side
-              </div>
-              <p>
-                Family-owned specialty contractor exiting to a strategic buyer
-                after 35 years of operation.
-              </p>
+          {/* RECENT MANDATES */}
+          <section className="mt-4">
+            <div className="text-[10px] md:text-[11px] tracking-[0.18em] uppercase text-spmuted mb-3">
+              Recent mandates
             </div>
-            <div className="border border-spborder rounded-lg p-4 bg-white/70">
-              <div className="text-xs uppercase tracking-[0.18em] text-spmuted mb-1">
-                Recapitalization
+
+            <div className="grid gap-4 md:grid-cols-2">
+              {/* Card 1 – Sell-side */}
+              <div className="rounded-2xl border border-spborder bg-[#faf5ee] px-5 py-4 shadow-[0_8px_18px_rgba(0,0,0,0.03)]">
+                <div className="text-[10px] tracking-[0.20em] uppercase text-spmuted mb-2">
+                  Sell-side
+                </div>
+                <p className="text-[13px] leading-6 text-sptext/80">
+                  Family-owned specialty contractor exiting to a strategic buyer
+                  after 35 years of operation.
+                </p>
               </div>
-              <p>
-                Regional field services platform partnering with a private
-                equity sponsor to accelerate growth across the Southeast.
-              </p>
+
+              {/* Card 2 – Recap */}
+              <div className="rounded-2xl border border-spborder bg-[#faf5ee] px-5 py-4 shadow-[0_8px_18px_rgba(0,0,0,0.03)]">
+                <div className="text-[10px] tracking-[0.20em] uppercase text-spmuted mb-2">
+                  Recapitalization
+                </div>
+                <p className="text-[13px] leading-6 text-sptext/80">
+                  Regional field services platform partnering with a private
+                  equity sponsor to accelerate growth across the Southeast.
+                </p>
+              </div>
             </div>
-          </div>
+          </section>
         </section>
 
         {/* FOOTER */}
-        <footer className="border-t border-spborder mt-20 pt-5 text-spmuted text-[11px] md:text-xs">
+        <footer className="border-top border-spborder mt-16 pt-6 text-spmuted text-[11px] md:text-xs border-t">
           <div className="mb-1">
             <a
               href="mailto:info@structuredpartners.com"
