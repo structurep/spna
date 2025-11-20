@@ -11,6 +11,10 @@ export default {
         spmuted: "#6b6b6b",
         spborder: "#e1d9ce",
         espaccent: "#e35f4f"
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "serif"]
       }
     }
   },

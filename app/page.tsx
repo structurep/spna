@@ -1,11 +1,29 @@
 import Image from "next/image";
 
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Mandates", href: "#mandates" },
+  { label: "Contact", href: "mailto:info@structuredpartners.com" }
+];
+
+const mandates = [
+  {
+    label: "Sell-side",
+    copy:
+      "Family-owned specialty contractor exiting to a strategic buyer after 35 years of operation."
+  },
+  {
+    label: "Recapitalization",
+    copy:
+      "Regional field services platform partnering with a private equity sponsor to accelerate growth across the Southeast."
+  }
+];
+
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col px-6 py-10 md:px-12 lg:px-20">
-      <div className="w-full max-w-5xl mx-auto flex flex-col flex-1">
-        {/* NAV */}
-        <nav className="flex items-center justify-between mb-20 md:mb-24">
+    <main className="flex min-h-screen flex-col px-6 py-10 md:px-12 lg:px-20">
+      <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-12">
+        <nav className="flex items-center justify-between border-b border-spborder pb-6">
           <div className="flex items-center gap-3">
             <Image
               src="/images/logo.svg"
@@ -14,99 +32,84 @@ export default function Home() {
               height={28}
               priority
             />
-            <span className="text-[11px] md:text-xs tracking-[0.18em] uppercase">
+            <span className="text-[10px] tracking-[0.22em] uppercase text-sptext">
               Structured Partners
             </span>
           </div>
-          <div className="hidden md:flex items-center gap-6 text-[11px] tracking-[0.16em] uppercase text-spmuted">
-            <a href="#" className="hover:text-sptext transition-colors">
-              About
-            </a>
-            <a href="#" className="hover:text-sptext transition-colors">
-              Mandates
-            </a>
-            <a
-              href="mailto:info@structuredpartners.com"
-              className="hover:text-sptext transition-colors"
-            >
-              Contact
-            </a>
+          <div className="hidden gap-6 text-[10px] tracking-[0.2em] uppercase text-spmuted md:flex">
+            {navLinks.map(link => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="transition-colors duration-150 hover:text-sptext"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         </nav>
 
-        {/* HERO */}
-        <section className="flex flex-col gap-10 md:gap-14 flex-1">
-          <div className="max-w-xl">
-            <div className="text-[10px] md:text-[11px] tracking-[0.18em] uppercase text-spmuted mb-4">
+        <section
+          id="about"
+          className="flex flex-1 flex-col justify-center gap-12 pb-10 pt-6"
+        >
+          <div className="max-w-2xl space-y-5">
+            <p className="text-[10px] tracking-[0.22em] uppercase text-spmuted">
               Industrial &amp; field services M&amp;A
-            </div>
-
-            <h1 className="text-[28px] md:text-[36px] lg:text-[40px] leading-tight mb-4">
+            </p>
+            <h1 className="font-display text-[32px] leading-tight text-sptext md:text-[44px]">
               Structuring exits for essential service companies.
             </h1>
-
-            <p className="text-[14px] leading-7 text-spmuted mb-3 max-w-xl">
-              Structured Partners is a boutique M&amp;A advisory firm focused on
-              industrial and field services businesses. We run a limited number
-              of sale and recapitalization processes each year, and every
-              mandate is led start-to-finish by an experienced Managing
-              Director — not a junior team.
+            <p className="max-w-xl text-[15px] leading-7 text-spmuted">
+              Structured Partners is a boutique, senior-led M&amp;A advisory firm
+              for industrial, infrastructure, and recurring maintenance
+              businesses. Every mandate is run by an experienced Managing
+              Director — there are no handoffs to junior teams, just measured
+              execution and precise buyer engagement.
             </p>
-
-            <p className="text-[12px] leading-6 text-spmuted">
-              Based in St. Petersburg, Florida. Working with founders, families,
-              and select investors across the United States.
+            <p className="text-[13px] leading-6 text-spmuted">
+              Based in St. Petersburg, Florida. Working with founders, family
+              offices, and select investors across the United States.
             </p>
           </div>
 
-          {/* RECENT MANDATES */}
-          <section className="mt-4">
-            <div className="text-[10px] md:text-[11px] tracking-[0.18em] uppercase text-spmuted mb-3">
+          <section id="mandates" className="space-y-4">
+            <p className="text-[10px] tracking-[0.2em] uppercase text-spmuted">
               Recent mandates
-            </div>
-
+            </p>
             <div className="grid gap-4 md:grid-cols-2">
-              {/* Card 1 – Sell-side */}
-              <div className="rounded-2xl border border-spborder bg-[#faf5ee] px-5 py-4 shadow-[0_8px_18px_rgba(0,0,0,0.03)]">
-                <div className="text-[10px] tracking-[0.20em] uppercase text-spmuted mb-2">
-                  Sell-side
+              {mandates.map(item => (
+                <div
+                  key={item.label}
+                  className="rounded-[28px] border border-spborder bg-white/60 px-6 py-5 shadow-[0_12px_30px_rgba(0,0,0,0.04)]"
+                >
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-spmuted">
+                    {item.label}
+                  </p>
+                  <p className="mt-3 text-[14px] leading-6 text-sptext/80">
+                    {item.copy}
+                  </p>
                 </div>
-                <p className="text-[13px] leading-6 text-sptext/80">
-                  Family-owned specialty contractor exiting to a strategic buyer
-                  after 35 years of operation.
-                </p>
-              </div>
-
-              {/* Card 2 – Recap */}
-              <div className="rounded-2xl border border-spborder bg-[#faf5ee] px-5 py-4 shadow-[0_8px_18px_rgba(0,0,0,0.03)]">
-                <div className="text-[10px] tracking-[0.20em] uppercase text-spmuted mb-2">
-                  Recapitalization
-                </div>
-                <p className="text-[13px] leading-6 text-sptext/80">
-                  Regional field services platform partnering with a private
-                  equity sponsor to accelerate growth across the Southeast.
-                </p>
-              </div>
+              ))}
             </div>
           </section>
         </section>
 
-        {/* FOOTER */}
-        <footer className="border-top border-spborder mt-16 pt-6 text-spmuted text-[11px] md:text-xs border-t">
-          <div className="mb-1">
+        <footer className="border-t border-spborder pt-6 text-[11px] text-spmuted">
+          <div className="mb-2">
             <a
               href="mailto:info@structuredpartners.com"
-              className="hover:text-espaccent transition-colors"
+              className="transition-colors duration-150 hover:text-espaccent"
             >
               info@structuredpartners.com
             </a>
           </div>
-          <div className="uppercase tracking-[0.14em] text-[10px] md:text-[11px]">
-            Structured Partners · Industrial &amp; field services M&amp;A
-          </div>
-          <div className="mt-1 text-[11px] md:text-xs">
-            © 2025 Structured Partners. All rights reserved.
-          </div>
+          <p className="text-[10px] uppercase tracking-[0.18em]">
+            Structured Partners · Industrial &amp; Field Services M&amp;A
+          </p>
+          <p className="mt-1 text-[11px] text-spmuted">
+            © {new Date().getFullYear()} Structured Partners. All rights reserved.
+          </p>
         </footer>
       </div>
     </main>
