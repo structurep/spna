@@ -14,25 +14,105 @@ body {
   min-height: 100vh;
   font-family: var(--font-sans);
   letter-spacing: -0.01em;
-  background-color: #f7f3ec;
+  background-color: #f9f6f1;
   color: #111;
+}
+
+.page-fade {
   opacity: 1;
   transform: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  body {
+  .page-fade {
     opacity: 0;
-    transform: translateY(12px);
-    animation: fadeIn 0.7s ease-out forwards;
+    transform: translateY(8px);
+    animation: pageFade 0.8s ease-out forwards;
   }
 }
 
-@keyframes fadeIn {
+@keyframes pageFade {
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.hero-line {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-line {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: heroRise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .hero-line:nth-child(1) {
+    animation-delay: 0ms;
+  }
+
+  .hero-line:nth-child(2) {
+    animation-delay: 120ms;
+  }
+
+  .hero-line:nth-child(3) {
+    animation-delay: 260ms;
+  }
+
+  .hero-line:nth-child(4) {
+    animation-delay: 380ms;
+  }
+}
+
+@keyframes heroRise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-fade {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card-fade {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: cardEntrance 0.9s ease-out forwards;
+  }
+
+  .card-fade:nth-child(1) {
+    animation-delay: 200ms;
+  }
+
+  .card-fade:nth-child(2) {
+    animation-delay: 300ms;
+  }
+}
+
+@keyframes cardEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-shell {
+  transition:
+    padding 250ms ease,
+    background-color 250ms ease,
+    border-color 250ms ease,
+    backdrop-filter 250ms ease;
+  background-color: transparent;
+}
+
+.nav-shell.scrolled {
+  background-color: rgba(249, 246, 241, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.06);
 }
 
 ::selection {

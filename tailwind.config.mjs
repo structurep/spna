@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        spbg: "#f7f3ec",
+        spbg: "#f9f6f1",
         sptext: "#111111",
         spmuted: "#6b6b6b",
         spborder: "#e1d9ce",
