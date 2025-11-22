@@ -16,6 +16,18 @@ body {
   letter-spacing: -0.01em;
   background-color: #f9f6f1;
   color: #111;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 10% 15%, rgba(255, 255, 255, 0.8), transparent 45%);
+  opacity: 0.6;
+  z-index: -1;
 }
 
 .page-fade {
@@ -27,7 +39,7 @@ body {
   .page-fade {
     opacity: 0;
     transform: translateY(8px);
-    animation: pageFade 0.8s ease-out forwards;
+    animation: pageFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 }
 
@@ -38,6 +50,7 @@ body {
   }
 }
 
+
 .hero-line {
   opacity: 1;
 }
@@ -45,7 +58,7 @@ body {
 @media (prefers-reduced-motion: no-preference) {
   .hero-line {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(14px);
     animation: heroRise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
@@ -80,8 +93,8 @@ body {
 @media (prefers-reduced-motion: no-preference) {
   .card-fade {
     opacity: 0;
-    transform: translateY(12px);
-    animation: cardEntrance 0.9s ease-out forwards;
+    transform: translateY(16px);
+    animation: cardEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .card-fade:nth-child(1) {
@@ -89,7 +102,7 @@ body {
   }
 
   .card-fade:nth-child(2) {
-    animation-delay: 300ms;
+    animation-delay: 320ms;
   }
 }
 
@@ -110,9 +123,9 @@ body {
 }
 
 .nav-shell.scrolled {
-  background-color: rgba(249, 246, 241, 0.9);
+  background-color: rgba(249, 246, 241, 0.86);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(17, 17, 17, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 ::selection {
